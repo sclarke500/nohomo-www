@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  color: #555555;
+}
+
+body, td {
+  font-size: 16px;
+  font-family: 'Segoe UI', 'Segoe', Tahoma, Verdana;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+div, * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  &.col {
+    flex-direction: column;
+  }
+}
+.flex-1 {
+  flex: 1;
+}
+
+div.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.colloop(12);
+.colloop(@n, @i: 1) when (@i =< @n) {
+  .col@{i} { width: @i * 100% / @n }
+  .colloop(@n, (@i + 1));
+}
+
+.myloop(20);
+.myloop(@n, @i: 1) when (@i =< @n) {
+  // margins and padding
+  .p@{i} { padding: @i*5px }
+  .px@{i} { padding-left: @i*5px; padding-right: @i*5px }
+  .py@{i} { padding-top: @i*5px; padding-bottom: @i*5px }
+  .pt@{i} { padding-top: @i*5px }
+  .pr@{i} { padding-right: @i*5px }
+  .pb@{i} { padding-bottom: @i*5px }
+  .pl@{i} { padding-left: @i*5px }
+  .m@{i} { margin: @i*5px }
+  .mx@{i} { margin-left: @i*5px; margin-right: @i*5px }
+  .my@{i} { margin-top: @i*5px; margin-bottom: @i*5px }
+  .mt@{i} { margin-top: @i*5px }
+  .mr@{i} { margin-right: @i*5px }
+  .mb@{i} { margin-bottom: @i*5px }
+  .ml@{i} { margin-left: @i*5px }
+
+  .w@{i} { width: @i*50px }
+  .tab@{i} { width: @i*35px }
+  .indent@{i} { margin-left: @i*35px }
+
+  .myloop(@n, (@i + 1));
+}
+
+.borderloop(3);
+.borderloop(@n, @i: 1) when (@i =< @n) {
+  .b@{i} { border: solid @i*1px #ccc }
+  .r@{i} { border-radius: @i*5px }
+  .borderloop(@n, (@i + 1));
+}
+
+.b { font-weight: bold; }
+.s { font-size: 85%; }
+.xs { font-size: 70%; }
+.l { font-size: 120%; }
+.xl { font-size: 140%; }
+.xxl { font-size: 160%; }
+.i { font-style: italic; }
+.caps { text-transform: uppercase; }
+.smallcaps { font-variant: small-caps; }

@@ -1,0 +1,20 @@
+HOME
+
+<hr>
+
+<button (click)='newMatter()'>New Matter</button>
+
+
+<div class='flex mt4'>
+  <div class='col6 mr2'>
+
+    <div *ngFor='let matter of matters' class='tile' [routerLink]='["matter", matter._id]'>
+      {{ matter.name }}
+    </div>
+
+
+  </div>
+  <div class='col-6 ml2'>
+
+  </div>
+</div>

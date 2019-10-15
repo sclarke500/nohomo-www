@@ -1,0 +1,22 @@
+<div>
+
+</div>
+<div class='frame mt10'>
+
+  <div class='webform'>
+    <p>
+      <label>email:</label>
+      <input [(ngModel)]='creds.email'>
+    </p>
+    <p>
+      <label>password:</label>
+      <input [(ngModel)]='creds.password' type='password'>
+    </p>
+  </div>
+  <div class='center mt8'>
+    <button class='ok' (click)='login()'>Login</button>
+  </div>
+<div class='center mt8'>
+  Don't have an account? <span class='link' routerLink='/signup'>Signup.</span>
+</div>
+</div>

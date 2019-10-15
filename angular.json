@@ -36,7 +36,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/nohomo-www",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -47,7 +47,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles/styles.less"
             ],
             "scripts": []
           },
