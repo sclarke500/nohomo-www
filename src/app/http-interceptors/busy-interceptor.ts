@@ -4,7 +4,7 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
-import { Notification } from '@divorcemate/widgets';
+import { NotificationService } from 'simple-ng-notification';
 
 @Injectable()
 export class BusyInterceptor implements HttpInterceptor {
@@ -12,7 +12,7 @@ export class BusyInterceptor implements HttpInterceptor {
   private busyCount = 0;
 
   constructor (
-    private notification: Notification,
+    private notification: NotificationService,
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler):

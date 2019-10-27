@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Notification } from '@divorcemate/widgets';
+import { DialogService } from 'simple-ng-dialog';
 
 @Component({
   templateUrl: 'home.component.html',
@@ -12,7 +12,7 @@ export class HomeComponent {
 
   constructor (
     private http: HttpClient,
-    private notification: Notification,
+    private dialogService: DialogService,
   ) { }
 
   ngOnInit() {
@@ -26,7 +26,7 @@ export class HomeComponent {
   }
 
   newMatter() {
-    this.notification.inputBox('New matter name?', '').then(name => {
+    this.dialogService.inputBox('New matter name?', '').then(name => {
       this.http.post('matters', { name: name }).subscribe(() => {
         this.fetchMatters();
       })

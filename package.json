@@ -20,8 +20,10 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
-    "@divorcemate/widgets": "0.0.14",
     "rxjs": "~6.4.0",
+    "simple-ng-date-select": "0.0.2",
+    "simple-ng-dialog": "0.0.2",
+    "simple-ng-notification": "0.0.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { WidgetsModule } from '@divorcemate/widgets';
+
+import { DialogService, DialogModule } from 'simple-ng-dialog';
+import { NotificationService, NotificationModule } from 'simple-ng-notification';
+import { DateSelectModule } from 'simple-ng-date-select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,11 +28,17 @@ import { LoginModule } from './login/login.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    WidgetsModule,
+    DialogModule,
+    NotificationModule,
+    DateSelectModule,
     CoreModule.forRoot(),
     LoginModule,
   ],
-  providers: [HttpInterceptorProviders,],
+  providers: [
+    HttpInterceptorProviders,
+    DialogService,
+    NotificationService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

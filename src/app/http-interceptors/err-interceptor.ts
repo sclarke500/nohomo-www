@@ -4,7 +4,7 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Notification } from '@divorcemate/widgets';
+import { NotificationService } from 'simple-ng-notification';
 import { AuthService } from '../core/auth.service';
 
 const customErrors = ['Duplicate Email'];
@@ -13,7 +13,7 @@ const customErrors = ['Duplicate Email'];
 export class ErrInterceptor implements HttpInterceptor {
 
   constructor (
-    private notification: Notification,
+    private notification: NotificationService,
     private authService: AuthService,
   ) { }
 

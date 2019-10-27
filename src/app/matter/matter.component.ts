@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Notification } from '@divorcemate/widgets';
-
 import { HttpClient } from '@angular/common/http';
+
+import { DialogService } from 'simple-ng-dialog';
 
 @Component({
   templateUrl: 'matter.component.html',
@@ -15,7 +15,7 @@ export class MatterComponent {
   constructor (
     private http: HttpClient,
     private activatedRoute: ActivatedRoute,
-    private notification: Notification,
+    private dialogService: DialogService,
   ) { }
 
   ngOnInit() {
@@ -30,7 +30,7 @@ export class MatterComponent {
   }
 
   newDoc() {
-    this.notification.inputBox('New doc name?', '').then(name => {
+    this.dialogService.inputBox('New doc name?', '').then(name => {
       this.http.post('matters/' + this.matterId + '/documents', { name: name }).subscribe(() => {
         this.fetchMatter();
       })
