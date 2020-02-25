@@ -5,6 +5,9 @@ import { AuthService } from './core/auth.service';
 
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './login/signup.component';
+import { ForgotComponent } from './login/forgot.component';
+import { ResetPasswordComponent } from './login/reset-password.component';
+
 import { HomeComponent } from './home/home.component';
 import { MatterComponent } from './matter/matter.component';
 
@@ -26,6 +29,14 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
+  },
+  {
+    path: 'forgot',
+    component: ForgotComponent,
+  },
+  {
+    path: 'reset-password',
+    component: ResetPasswordComponent,
   }
 ];
 

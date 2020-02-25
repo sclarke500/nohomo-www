@@ -28,7 +28,8 @@ export class ErrInterceptor implements HttpInterceptor {
 
   private handleError = (error: HttpErrorResponse) => {
     this.notification.busy = false;
-    const msg =  error.message || 'Server error';
+    console.log(error)
+    const msg =  (error.error && error.error.message) ? error.error.message : 'Server error';
     if (error.status === 401 || msg === 'TokenInvalidated') {
       this.authService.logoutOnErr();
       return([]);
