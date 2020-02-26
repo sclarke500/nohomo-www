@@ -8,8 +8,9 @@ HOME
 <div class='flex mt4'>
   <div class='col6 mr2'>
 
-    <div *ngFor='let matter of matters' class='tile' [routerLink]='["matter", matter._id]'>
-      {{ matter.name }}
+    <div *ngFor='let matter of matters' class='tile flex' [routerLink]='["matter", matter._id]'>
+      <div class='flex-1'>{{ matter.name }}</div>
+      <div class='show-on-hover' (click)='deleteMatter($event, matter)'><i class='fa fa-trash'></i></div>
     </div>
 
 

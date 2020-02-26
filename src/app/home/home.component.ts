@@ -32,5 +32,14 @@ export class HomeComponent {
       })
     })
   }
+
+  deleteMatter(event, matter) {
+    event.stopPropagation();
+    this.dialogService.confirm('Are you sure?').then(() => {
+      this.http.delete('matters/' + matter._id).subscribe(() => {
+        this.matters.splice(this.matters.indexOf(matter), 1);
+      })
+    });
+  }
   
 }

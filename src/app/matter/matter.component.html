@@ -6,3 +6,10 @@
 <button (click)='newDoc()'>+ Doc</button>
 <hr>
 matter {{ matterId }}
+<div>
+  <div *ngFor='let doc of documents' class='tile flex' [routerLink]='["document", doc._id]'>
+    <div class='flex-1'>{{ doc.name }}</div>
+    <div class='show-on-hover' (click)='deleteDocument($event, doc)'><i class='fa fa-trash'></i></div>
+  </div>
+
+</div>

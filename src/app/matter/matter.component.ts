@@ -11,6 +11,7 @@ export class MatterComponent {
 
   matter;
   matterId;
+  documents;
 
   constructor (
     private http: HttpClient,
@@ -21,6 +22,7 @@ export class MatterComponent {
   ngOnInit() {
     this.matterId = this.activatedRoute.snapshot.params['matterId'];
     this.fetchMatter();
+    this.fetchDocuments();
   }
 
   fetchMatter() {
@@ -29,12 +31,27 @@ export class MatterComponent {
     })
   }
 
+  fetchDocuments() {
+    this.http.get('matters/' + this.matterId + '/documents').subscribe(documents => {
+      this.documents = documents;
+    })
+  }
+
   newDoc() {
     this.dialogService.inputBox('New doc name?', '').then(name => {
       this.http.post('matters/' + this.matterId + '/documents', { name: name }).subscribe(() => {
-        this.fetchMatter();
+        this.fetchDocuments();
       })
     })
+  }
+
+  deleteDocument(event, document) {
+    event.stopPropagation();
+    this.dialogService.confirm('Are you sure?').then(() => {
+      this.http.delete('matters/' + this.matterId + '/documents/' + document._id).subscribe(() => {
+        this.documents.splice(this.documents.indexOf(document), 1);
+      })
+    });
   }
 
 }

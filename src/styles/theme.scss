@@ -13,3 +13,11 @@
     background: #f4f4f4;
   }
 }
+
+.show-on-hover {
+  display: none;
+}
+
+div:hover>.show-on-hover {
+  display: block;
+}
