@@ -1,1 +1,28 @@
-forgot
+<div class='frame mt10'>
+
+  <div *ngIf='!submitted'>
+    <div class='webform'>
+      <p>
+        <label>email:</label>
+        <input [(ngModel)]='email'>
+      </p>
+    </div>
+    <div class='center mt8'>
+      <button class='ok' (click)='submit()'>Request Reset Link</button>
+    </div>
+  </div>
+
+  <div *ngIf='submitted'>
+    A link to reset your password will be emailed. 
+
+    <div [innerHTML]='emailbody'></div>
+  </div>
+
+
+  <div class='center mt8'>
+    <div class='link s mt1' routerLink='/login'>
+      <-- Back
+    </div>
+
+
+</div>
