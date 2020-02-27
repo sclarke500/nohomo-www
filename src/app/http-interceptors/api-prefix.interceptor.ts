@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-// const apiUrl = 'https://nohomo-api.herokuapp.com/';
-const apiUrl = 'http://localhost:3305/';
+import { environment } from '../../environments/environment';
+
+
 
 @Injectable()
 export class ApiPrefixInterceptor implements HttpInterceptor {
@@ -14,7 +15,7 @@ export class ApiPrefixInterceptor implements HttpInterceptor {
     const _partial = req.url.indexOf('http') === -1;  // only prepend to partial (missing http) urls
 
     if (_partial) {
-      const reqClone = req.clone({ url: apiUrl + req.url });
+      const reqClone = req.clone({ url: environment.apiUrl + req.url });
       return next.handle(reqClone);
     } else {
       return next.handle(req);
