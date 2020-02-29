@@ -8,7 +8,10 @@ import { DialogService } from 'simple-ng-dialog';
 })
 export class HomeComponent {
 
+  firm;
   matters;
+
+  firmDetail = false;
 
   constructor (
     private http: HttpClient,
@@ -17,11 +20,18 @@ export class HomeComponent {
 
   ngOnInit() {
     this.fetchMatters();
+    this.fetchFirm();
   }
 
   fetchMatters() {
     this.http.get('matters').subscribe(matters => {
       this.matters = matters;
+    })
+  }
+
+  fetchFirm() {
+    this.http.get('firm').subscribe(firm => {
+      this.firm = firm;
     })
   }
 
@@ -38,7 +48,14 @@ export class HomeComponent {
     this.dialogService.confirm('Are you sure?').then(() => {
       this.http.delete('matters/' + matter._id).subscribe(() => {
         this.matters.splice(this.matters.indexOf(matter), 1);
-      })
+      });
+    });
+  }
+
+  saveFirm(firm) {
+    this.http.put('firm', firm).subscribe(() => {
+      Object.assign(this.firm, firm);
+      this.firmDetail = false;
     });
   }
   

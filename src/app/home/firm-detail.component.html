@@ -1,0 +1,24 @@
+<sng-dialog (close)='close.emit()' (ok)='onOk()'>
+
+  <form [formGroup]='firmForm' class='webform'>
+
+    <p>
+      <label>Name</label>
+      <input formControlName='name'>
+    </p>
+
+    <p>
+      <label>Address</label>
+      <input formControlName='address1'>
+    </p>
+
+    <p>
+      <label></label>
+      <input formControlName='address2'>
+    </p>
+
+  </form>
+
+
+
+</sng-dialog>

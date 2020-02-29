@@ -16,6 +16,16 @@ HOME
 
   </div>
   <div class='col-6 ml2'>
+    <h2>{{ firm.name }}</h2>
+
+    <button (click)='firmDetail=true'>Edit Firm</button>
 
   </div>
 </div>
+
+<nh-firm-detail 
+  *ngIf='firmDetail'
+  [firm]='firm'
+  (save)='saveFirm($event)'
+  (close)='firmDetail=false'
+></nh-firm-detail>

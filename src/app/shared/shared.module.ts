@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { DialogModule } from 'simple-ng-dialog';
+import { DateSelectModule } from 'simple-ng-date-select';
+
 import { PasswordDirective } from './directives/password.directive';
 
 @NgModule({
@@ -11,6 +14,8 @@ import { PasswordDirective } from './directives/password.directive';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    DialogModule,
+    DateSelectModule,
   ],
   declarations: [
     PasswordDirective,
@@ -21,6 +26,9 @@ import { PasswordDirective } from './directives/password.directive';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+
+    DialogModule,
+    DateSelectModule,
 
     PasswordDirective,
   ],
