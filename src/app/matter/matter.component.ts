@@ -13,6 +13,8 @@ export class MatterComponent {
   matterId;
   documents;
 
+  matterDetail = false;
+
   constructor (
     private http: HttpClient,
     private activatedRoute: ActivatedRoute,
@@ -51,6 +53,13 @@ export class MatterComponent {
       this.http.delete('matters/' + this.matterId + '/documents/' + document._id).subscribe(() => {
         this.documents.splice(this.documents.indexOf(document), 1);
       })
+    });
+  }
+
+  saveMatter(matter) {
+    this.http.put('matters/' + this.matterId, matter).subscribe(() => {
+      Object.assign(this.matter, matter);
+      this.matterDetail = false;
     });
   }
 

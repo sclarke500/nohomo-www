@@ -1,0 +1,15 @@
+<sng-dialog (close)='close.emit()' (ok)='onOk()'>
+
+  <form [formGroup]='matterForm' class='webform'>
+
+    <div>
+      <label>Name</label>
+      <input formControlName='name'>
+    </div>
+
+
+  </form>
+
+
+
+</sng-dialog>

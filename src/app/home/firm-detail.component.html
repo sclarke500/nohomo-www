@@ -2,20 +2,45 @@
 
   <form [formGroup]='firmForm' class='webform'>
 
-    <p>
+    <div>
       <label>Name</label>
       <input formControlName='name'>
-    </p>
+    </div>
 
-    <p>
+    <div>
       <label>Address</label>
       <input formControlName='address1'>
-    </p>
+    </div>
 
-    <p>
+    <div>
       <label></label>
       <input formControlName='address2'>
-    </p>
+    </div>
+
+    <div>
+      <label>City</label>
+      <input formControlName='city'>
+    </div>
+
+    <div>
+      <label>Province</label>
+      <select formControlName='province' nhProvinces></select>
+    </div>
+
+    <div>
+      <label>Postal Code</label>
+      <input formControlName='postalCode' nhPostalCode>
+    </div>
+
+    <div>
+      <label>Telephone</label>
+      <input formControlName='telephone' nhTelephone>
+    </div>
+
+    <div>
+      <label>Email</label>
+      <input formControlName='email'>
+    </div>
 
   </form>
 

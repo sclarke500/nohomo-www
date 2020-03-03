@@ -16,9 +16,12 @@ HOME
 
   </div>
   <div class='col-6 ml2'>
-    <h2>{{ firm.name }}</h2>
+    <div *ngIf='firm'>
+      <h2>{{ firm.name }}</h2>
 
-    <button (click)='firmDetail=true'>Edit Firm</button>
+      <button (click)='firmDetail=true'>Edit Firm</button>
+  
+    </div>
 
   </div>
 </div>

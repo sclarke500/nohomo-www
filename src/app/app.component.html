@@ -10,6 +10,7 @@
         </div>
         <div>
             <span class='button' *ngIf='!authService.user' routerLink='/login'>Login</span>
+            <span class='button' *ngIf='authService.user' (click)='logout()'>Logout</span>
         </div>
     </div>
 

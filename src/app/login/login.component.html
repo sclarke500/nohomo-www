@@ -4,14 +4,14 @@
 <div class='frame mt10'>
 
   <div class='webform'>
-    <p>
+    <div>
       <label>email:</label>
       <input [(ngModel)]='creds.email'>
-    </p>
-    <p>
+    </div>
+    <div>
       <label>password:</label>
       <input [(ngModel)]='creds.password' type='password'>
-    </p>
+    </div>
   </div>
   <div class='center mt8'>
     <button class='ok' (click)='login()'>Login</button>

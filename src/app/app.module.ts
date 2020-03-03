@@ -11,8 +11,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
-
-import { MatterComponent } from './matter/matter.component';
+import { MatterModule } from './matter/matter.module';
 
 import { HttpInterceptorProviders } from './http-interceptors/interceptors';
 
@@ -21,7 +20,6 @@ import { LoginModule } from './login/login.module';
 @NgModule({
   declarations: [
     AppComponent,
-    MatterComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +30,7 @@ import { LoginModule } from './login/login.module';
     SharedModule,
     LoginModule,
     HomeModule,
+    MatterModule,
   ],
   providers: [
     HttpInterceptorProviders,

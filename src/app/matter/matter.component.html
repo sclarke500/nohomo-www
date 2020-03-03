@@ -4,6 +4,7 @@
 
 <hr>
 <button (click)='newDoc()'>+ Doc</button>
+ | <button (click)='matterDetail=true'>Edit Mater</button>
 <hr>
 matter {{ matterId }}
 <div>
@@ -13,3 +14,11 @@ matter {{ matterId }}
   </div>
 
 </div>
+
+
+<nh-matter-detail 
+  *ngIf='matterDetail'
+  [matter]='matter'
+  (save)='saveMatter($event)'
+  (close)='matterDetail=false'
+></nh-matter-detail>

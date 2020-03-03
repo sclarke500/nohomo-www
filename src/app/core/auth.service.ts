@@ -35,6 +35,10 @@ export class AuthService implements CanActivate {
   }
 
   logoutOnErr() {
+    this.clear();
+  }
+
+  clear() {
     sessionStorage.clear();
     this.router.navigate(['/login']);
   }

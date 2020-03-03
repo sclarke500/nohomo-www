@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { AuthService } from './core/auth.service';
 
@@ -11,6 +12,14 @@ export class AppComponent {
 
   constructor (
     public authService: AuthService,
+    private http: HttpClient,
   ) { }
+
+    logout() {
+      this.http.post('logout', null).subscribe(() => {
+        this.authService.clear();
+      })
+    }
+
 
 }
